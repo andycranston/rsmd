@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>Really Simple Mark Down to HTML converter</title>
+<style>
+blockquote { background-color: lightgrey; margin-left: 50px; margin-right: 50px; }
+pre { background-color: lightgreen; margin-left: 50px; }
+</style>
+</head>
+
+<body>
+
+<h1>Really Simple Mark Down to HTML converter</h1>
+
+</p>
+Converts the simple and very basic elements of Mark Down
+to HTML.
+</p>
+
+<h2>What is it for?</h2>
+
+</p>
+In a few words:
+</p>
+
+<blockquote>To preview README.md files in a browser before uploading to github</blockquote>
+
+<h2>What elements are currently supported?</h2>
+
+<ul>
+<li>Headings</li>
+<li>Paragraphs</li>
+<li>Lists</li>
+<li>Quotes</li>
+<li>Code segments with ```</li>
+</ul>
+
+<h2>Code</h2>
+
+</p>
+The converter is a small single Python 3 program contained in a file called:
+</p>
+
+<pre>
+rsmd.py
+</pre>
+
+<h2>Example usage (Windows)</h2>
+
+</p>
+Assume the `rsmd.py` file has been copied to:
+</p>
+
+<pre>
+C:\pythoncode\rsmd.py
+</pre>
+
+</p>
+Also assume the directory:
+</p>
+
+<pre>
+C:\andyc\projects\rsmd
+</pre>
+
+</p>
+contains a file called:
+</p>
+
+<pre>
+README.md
+</pre>
+
+</p>
+which has mark down to be converted.
+</p>
+
+</p>
+Open a Windows command prompt and type:
+</p>
+
+<pre>
+c:
+cd \andyc\projects\rsmd
+python \pythoncode\rsmd.py
+</pre>
+
+</p>
+The `rsmd.py` program should have created a file called:
+</p>
+
+<pre>
+README.htm
+</pre>
+
+</p>
+in the current directory.
+</p>
+
+</p>
+Open a web browser and enter the following URL:
+</p>
+
+<pre>
+file://c:/andyc/projects/rsmd/README.htm
+</pre>
+
+<h2>Example usage (UNIX/Linux)</h2>
+
+</p>
+Copy the rsmd.py to a directory in your PATH, remove the ".py" extension and make
+the file executable.  For example something similar to:
+</p>
+
+<pre>
+cp rsmd.py /home/andyc/bin
+cd /home/andyc/bin
+mv rsmd.py rsmd
+chmod a+x rsmd
+</pre>
+
+</p>
+Now running:
+</p>
+
+<pre>
+rsmd
+</pre>
+
+</p>
+in a directory will look for a file called:
+</p>
+
+<pre>
+README.md
+</pre>
+
+</p>
+and create the file:
+</p>
+
+<pre>
+README.htm
+</pre>
+
+</p>
+See the note below on command line arguments.
+</p>
+
+<h2>Command line arguments</h2>
+
+</p>
+The default input and output file names can be specified on the command line
+with the --infile and --outfile arugments.  For example on Windows:
+</p>
+
+<pre>
+python \pythoncode\rsmd.py --infile=moduledoc.md --outfile=moduledoc.html
+</pre>
+
+</p>
+and on UNIX/Linux:
+</p>
+
+<pre>
+rsmd --infile=moduledoc.md --outfile=moduledoc.html
+</pre>
+
+<h2>Limitations</h2>
+
+</p>
+It only converts the very basic mark down elements.  Anything else
+is just passed through as plain text.
+</p>
+
+<h2>Warnings</h2>
+
+</p>
+The output file is overwritten without asking for confirmation.
+</p>
+
+</body>
+</html>
