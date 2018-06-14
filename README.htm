@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Really Simple Mark Down to HTML converter</title>
+<title>Really Simple Mark Down (rsmd) to HTML converter</title>
 <style>
 blockquote { background-color: lightgrey; margin-left: 50px; margin-right: 50px; }
 pre { background-color: lightgreen; margin-left: 50px; }
@@ -9,7 +9,7 @@ pre { background-color: lightgreen; margin-left: 50px; }
 
 <body>
 
-<h1>Really Simple Mark Down to HTML converter</h1>
+<h1>Really Simple Mark Down (rsmd) to HTML converter</h1>
 
 </p>
 Converts the simple and very basic elements of Mark Down
@@ -27,11 +27,12 @@ In a few words:
 <h2>What elements are currently supported?</h2>
 
 <ul>
-<li>Headings</li>
+<li>Headings (#, ##, ###, etc.)</li>
 <li>Paragraphs</li>
-<li>Lists</li>
-<li>Quotes</li>
-<li>Code segments with ```</li>
+<li>Lists (* item)</li>
+<li>Quotes (&gt; text)</li>
+<li>Horizontal rule (---, *** and ___)</li>
+<li>Code segments between ```</li>
 </ul>
 
 <h2>Code</h2>
@@ -149,8 +150,9 @@ See the note below on command line arguments.
 <h2>Command line arguments</h2>
 
 </p>
-The default input and output file names can be specified on the command line
-with the --infile and --outfile arugments.  For example on Windows:
+The default input file name is `README.md` and the default output file
+name is `README.htm`.  Either or both of these can be changed with the command line
+options --infile and --outfile respectively.  For example on Windows:
 </p>
 
 <pre>
@@ -172,10 +174,19 @@ It only converts the very basic mark down elements.  Anything else
 is just passed through as plain text.
 </p>
 
+</p>
+My inline CSS styling is awful :-]
+</p>
+
 <h2>Warnings</h2>
 
 </p>
 The output file is overwritten without asking for confirmation.
+</p>
+
+<hr>
+</p>
+End of README
 </p>
 
 </body>

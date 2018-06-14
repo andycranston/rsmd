@@ -104,6 +104,23 @@ def extractlistitem(line):
     return ' '.join(words[1:])
 
 ######################################################################
+
+def ishorizontalrule(line):
+    if len(line) < 3:
+        return False
+    
+    if allsamechar(line, '-'):
+        return True
+
+    if allsamechar(line, '*'):
+        return True
+
+    if allsamechar(line, '_'):
+        return True
+
+    return False
+
+######################################################################
     
 def flushstyle(style, outputfile):
     if style == STYLE_PARA:
@@ -189,6 +206,15 @@ def processlines(lines, firstheading, outputfile):
                 flushstyle(style, outputfile)
                 style = STYLE_CODE
                 print('<pre>', file=outputfile)
+            continue
+            
+        if ishorizontalrule(line):
+            if style == STYLE_CODE:
+                print("{}".format(html(line)), file=outputfile)
+            else:
+                flushstyle(style, outputfile)
+                style = STYLE_NONE
+                print("<hr>", file=outputfile)
             continue
         
         if style == STYLE_NONE:

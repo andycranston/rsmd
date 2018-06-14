@@ -11,11 +11,12 @@ In a few words:
 
 ## What elements are currently supported?
 
-* Headings
+* Headings (#, ##, ###, etc.)
 * Paragraphs
-* Lists
-* Quotes
-* Code segments with ```
+* Lists (* item)
+* Quotes (> text)
+* Horizontal rule (---, *** and ___)
+* Code segments between ```
 
 ## Code
 
@@ -103,8 +104,9 @@ See the note below on command line arguments.
 
 ## Command line arguments
 
-The default input and output file names can be specified on the command line
-with the --infile and --outfile arugments.  For example on Windows:
+The default input file name is `README.md` and the default output file
+name is `README.htm`.  Either or both of these can be changed with the command line
+options --infile and --outfile respectively.  For example on Windows:
 
 ```
 python \pythoncode\rsmd.py --infile=moduledoc.md --outfile=moduledoc.html
@@ -121,6 +123,11 @@ rsmd --infile=moduledoc.md --outfile=moduledoc.html
 It only converts the very basic mark down elements.  Anything else
 is just passed through as plain text.
 
+My inline CSS styling is awful :-]
+
 ## Warnings
 
 The output file is overwritten without asking for confirmation.
+
+----------------------------
+End of README
